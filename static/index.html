@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RelyVax</title>
+
+	<script src="html5-qrcode.min.js" defer></script>
+	<script src="vue.min.js" defer></script>
+	<script src="index.js" defer></script>
+
+	<link rel="stylesheet" href="index.css">
+</head>
+<body>
+<h1>RelyVax</h1>
+
+<div id="app" v-cloak>
+	<div v-show=" state === 'scan' ">
+		<div id="reader" width="600px" style="width: 600px;"></div>
+	</div>
+
+	<div v-if=" state === 'ok' ">
+		<h2>Okie dokie!</h2>
+
+		<p>Verified by the State of California.</p>
+
+		<p>Name: {{verifName}}</p>
+		<p>DOB: {{verifDob}}</p>
+
+		<p>Fully vaccinated? {{verifApproved}}</p>
+
+		<p>Vaccine type: {{verifVaccineType}}</p>
+
+		<a href="#" @click=" state = 'scan' ">OK</a>
+	</div>
+
+	<div v-if=" state === 'error' ">
+		<h2>Error</h2>
+
+		<p>{{errorMessage}}</p>
+
+		<a href="#" @click=" state = 'scan' ">OK</a>
+	</div>
+
+	<footer>
+		<p>&copy; 2021 <a href="https://ethanent.me">Ethan Davis</a></p>
+	</footer>
+</div>
+
+</body>
+</html>
