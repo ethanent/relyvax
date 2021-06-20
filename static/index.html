@@ -9,42 +9,96 @@
 	<script src="index.js" defer></script>
 
 	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="lds.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-<h1>RelyVax</h1>
+<header>
+	<h1>RelyVax</h1>
+</header>
 
 <div id="app" v-cloak>
+	<div v-if=" state === 'welcome' " class="result">
+		<h2>Welcome</h2>
+
+		<p>RelyVax allows businesses and individuals to verify California vaccination record QR codes with ease.</p>
+
+		<p>If you appreciate RelyVax, check out more information about me,
+			<a href="https://ethanent.me" target="_blank">Ethan Davis, at my website</a>, or try out the
+			<a href="https://relypass.com">RelyPass password manager app</a>.</p>
+
+		<p>To obtain your vaccine record card, visit <a href="https://myvaccinerecord.cdph.ca.gov/" target="_blank">myvaccinerecord.cdph.ca.gov</a>.
+		</p>
+
+		<a href="#" @click=" state = 'scan' " class="scan-another">Prepare to scan ></a>
+	</div>
+
 	<div v-show=" state === 'scan' ">
 		<div id="reader" width="600px" style="width: 600px;"></div>
 	</div>
 
-	<div v-if=" state === 'ok' ">
-		<h2>Okie dokie!</h2>
-
-		<p>Verified by the State of California.</p>
-
-		<p>Name: {{verifName}}</p>
-		<p>DOB: {{verifDob}}</p>
-
-		<p>Fully vaccinated? {{verifApproved}}</p>
-
-		<p>Vaccine type: {{verifVaccineType}}</p>
-
-		<a href="#" @click=" state = 'scan' ">OK</a>
+	<div v-if=" state === 'loading' " id="loading-state">
+		<div class="lds-roller">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
 	</div>
 
-	<div v-if=" state === 'error' ">
-		<h2>Error</h2>
+	<div v-if=" state === 'ok' " class="result">
+		<img src="img/ok.svg" class="status-image"/>
 
-		<p>{{errorMessage}}</p>
+		<div class="result-details">
+			<h2>Looks good!</h2>
 
-		<a href="#" @click=" state = 'scan' ">OK</a>
+			<p>Verified fully vaccinated by the State of California.</p>
+
+			<p>Name: {{verifName}}</p>
+			<p>DOB: {{verifDob}}</p>
+
+			<p>Vaccine type: {{verifVaccineType}}</p>
+
+			<p>Note: You should confirm that the presenter is who they claim to be by checking a form of identification.
+				(eg. a driver's license)</p>
+
+			<a href="#" @click=" state = 'scan' " class="scan-another">&lt; Scan another</a>
+		</div>
 	</div>
 
-	<footer>
-		<p>&copy; 2021 <a href="https://ethanent.me">Ethan Davis</a></p>
-	</footer>
+	<div v-if=" state === 'warning' " class="result">
+		<img src="img/warn.svg" class="status-image"/>
+
+		<div class="result-details">
+			<h2>Warning</h2>
+
+			<p>{{errorMessage}}</p>
+
+			<a href="#" @click=" state = 'scan' " class="scan-another">&lt; Scan another</a>
+		</div>
+	</div>
+
+	<div v-if=" state === 'error' " class="result">
+		<img src="img/warn.svg" class="status-image"/>
+
+		<div class="result-details">
+			<h2>Error</h2>
+
+			<p>{{errorMessage}}</p>
+
+			<a href="#" @click=" state = 'scan' " class="scan-another">&lt; Scan another</a>
+		</div>
+	</div>
 </div>
+
+<footer>
+	<p>&copy; 2021 <a href="https://ethanent.me" target="_blank">Ethan Davis</a></p>
+</footer>
 
 </body>
 </html>

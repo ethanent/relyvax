@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="500" version="1.1" viewBox="0 0 500.00001 500.00001" xmlns="http://www.w3.org/2000/svg">
+ <g transform="matrix(7.0274 0 0 7.0274 74.315 -6969.7)">
+  <circle cx="25" cy="1027.4" r="23.151" fill="none" stroke="#555" stroke-width="2.0801"/>
+  <path transform="translate(0 1002.4)" d="m25.043 8.6289c-0.33906-0.016-0.65851 0.15913-0.82812 0.45312l-14.027 24.297c-0.34884 0.6047 0.08702 1.3604 0.78516 1.3613h28.055c0.69814-9e-4 1.134-0.75663 0.78516-1.3613l-14.027-24.297c-0.15424-0.2674-0.43382-0.43812-0.74219-0.45312zm-0.07031 8.3867c1.0132-0.0158 1.838 0.80701 1.8242 1.8203l-0.63477 8.0352c0.02221 1.5706-2.3464 1.5706-2.3242 0l-0.63477-8.0352c-0.0135-0.9913 0.77832-1.8053 1.7695-1.8203zm0.027341 12.318a1.1614 1.1614 0 0 1 1.1621 1.1621 1.1614 1.1614 0 0 1 -1.1621 1.1602 1.1614 1.1614 0 0 1 -1.1621 -1.1602 1.1614 1.1614 0 0 1 1.1621 -1.1621z" color="#000000" color-rendering="auto" fill="#555" image-rendering="auto" shape-rendering="auto" solid-color="#000000" style="block-progression:tb;isolation:auto;mix-blend-mode:normal;text-decoration-color:#000000;text-decoration-line:none;text-decoration-style:solid;text-indent:0;text-transform:none;white-space:normal"/>
+ </g>
+</svg>

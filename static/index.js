@@ -1,7 +1,7 @@
 const app = new Vue({
 	"el": "#app",
 	"data": {
-		"state": "scan",
+		"state": "welcome",
 		"verifName": "",
 		"verifDob": "",
 		"verifApproved": false,
@@ -13,6 +13,8 @@ const succ = async (decodedText, decodedResult) => {
 	if (app.state !== "scan") {
 		return
 	}
+
+	app.state = "loading"
 
 	const r = /shc:\/([0-9]+)/.exec(decodedText)
 
@@ -42,7 +44,11 @@ const succ = async (decodedText, decodedResult) => {
 
 	const parsed = await res.json()
 
-	console.log(parsed)
+	if (!parsed.approved) {
+		app.state = "warning"
+		app.errorMessage = "The patient presented a valid SMART card, but they are not yet fully vaccinated."
+		return
+	}
 
 	app.verifApproved = parsed.approved
 	app.verifName = parsed.fullName
@@ -52,7 +58,6 @@ const succ = async (decodedText, decodedResult) => {
 }
 
 const fail = (err) => {
-	//alert("Error: " + err)
 	if (err.toString().includes("No MultiFormat Readers")) {
 		return
 	}
@@ -62,7 +67,7 @@ const fail = (err) => {
 
 const scanner = new Html5QrcodeScanner("reader", {
 	"fps": 10,
-	"qrbox": 250,
+	"qrbox": 500,
 }, false)
 
 scanner.render(succ, fail)
