@@ -15,6 +15,10 @@ header, footer {
 	padding: 10px;
 }
 
+footer > p {
+	text-align: center;
+}
+
 body {
 	background-color: #efefef;
 
@@ -52,7 +56,7 @@ h1 {
 	}
 
 	footer {
-		font-size: 20px;
+		font-size: 17px;
 	}
 
 	.scan-another {
@@ -78,4 +82,8 @@ h1 {
 #app {
 	min-height: 300px;
 	padding: 10px;
+}
+
+#reader {
+	margin: auto;
 }
