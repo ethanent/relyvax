@@ -9,6 +9,8 @@
 header {
 	background-color: #304fee;
 	color: #fff;
+
+	margin-bottom: 10px;
 }
 
 header, footer {
@@ -81,7 +83,6 @@ h1 {
 
 #app {
 	min-height: 300px;
-	padding: 10px;
 }
 
 #reader {
