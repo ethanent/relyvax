@@ -14,11 +14,12 @@
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-<header>
-	<h1>RelyVax</h1>
-</header>
 
 <div id="app" v-cloak>
+	<header>
+		<h1 @click=" state === 'welcome' ">RelyVax</h1>
+	</header>
+
 	<div v-if=" state === 'welcome' " class="result">
 		<h2>Welcome</h2>
 
