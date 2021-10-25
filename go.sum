@@ -5,6 +5,8 @@ github.com/ethanent/calronavaxverif v0.0.3 h1:s5/VX/M/9ZcBjJTRNXY3JjBf8AXbjuZuyL
 github.com/ethanent/calronavaxverif v0.0.3/go.mod h1:kZmVDj1/xxm8yxCIVnbpcIVAJc5cyl6ptNgOP9ebvdI=
 github.com/ethanent/calronavaxverif v0.0.4 h1:LnsjpXH/hfN9n5OnzUJz4n2U35BnzCN6N65JfNpMM/s=
 github.com/ethanent/calronavaxverif v0.0.4/go.mod h1:kZmVDj1/xxm8yxCIVnbpcIVAJc5cyl6ptNgOP9ebvdI=
+github.com/ethanent/calronavaxverif v0.0.6 h1:fVs77I5o/eA5Dvb0xY0y4FpQ6MTCuoDR0stgdiGg4pg=
+github.com/ethanent/calronavaxverif v0.0.6/go.mod h1:kZmVDj1/xxm8yxCIVnbpcIVAJc5cyl6ptNgOP9ebvdI=
 github.com/google/go-cmp v0.5.6/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
